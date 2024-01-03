@@ -19,7 +19,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   late PageController _pageController;
-  late double _appBarHeight = 160;
+  late double _appBarHeight = 70;
 
   @override
   void initState() {
@@ -59,16 +59,17 @@ class _HomePageState extends State<HomePage> {
             ? MobileAppBar(
                 appBarClick: (isToggled, item) {
                   setState(() {
-                    if (isToggled)
+                    if (isToggled) {
                       _appBarHeight = 160;
-                    else
-                      _appBarHeight = 0.0;
+                    } else {
+                      _appBarHeight = 70;
+                    }
                   });
                   if (item != -1) {
                     _pageController.animateToPage(
                       item,
                       curve: Curves.easeIn,
-                      duration: Duration(milliseconds: 800),
+                      duration: const Duration(milliseconds: 800),
                     );
                   }
                 },
@@ -78,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                   _pageController.animateToPage(
                     pageNumber,
                     curve: Curves.easeIn,
-                    duration: Duration(milliseconds: 800),
+                    duration: const Duration(milliseconds: 800),
                   );
                 },
               ),

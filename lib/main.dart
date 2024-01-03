@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/features/home/presentation/home_page.dart';
+import 'package:my_portfolio/routing/app_router.dart';
 import 'package:my_portfolio/utils/custom_scroll.dart';
 
 void main() {
@@ -12,13 +12,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'My Portifolio',
+    return MaterialApp.router(
+      title: 'Nay Ye Lin 365',
+      debugShowCheckedModeBanner: false,
       scrollBehavior: MyCustomScrollBehavior(),
       theme: ThemeData(
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity),
-      home: const HomePage(),
+      routerConfig: router,
     );
   }
 }
