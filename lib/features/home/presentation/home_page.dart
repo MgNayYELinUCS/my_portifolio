@@ -84,41 +84,39 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
       ),
-      body: Container(
-        child: Stack(
-          children: [
-            CircularParticle(
-              key: UniqueKey(),
-              awayRadius: 1,
-              numberOfParticles: CommonFunction.isApp(context) ? 20 : 50,
-              speedOfParticles: 2,
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              onTapAnimation: true,
-              particleColor: Constants.white,
-              awayAnimationDuration: Duration(milliseconds: 600),
-              maxParticleSize: 2,
-              isRandSize: true,
-              isRandomColor: true,
-              randColorList: const [
-                Constants.green,
-                Constants.white,
-                Constants.lightestNavy
-              ],
-              awayAnimationCurve: Curves.easeInOut,
-              enableHover: false,
-              connectDots: false,
+      body: Stack(
+        children: [
+          CircularParticle(
+            key: UniqueKey(),
+            awayRadius: 1,
+            numberOfParticles: CommonFunction.isApp(context) ? 20 : 50,
+            speedOfParticles: 2,
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            onTapAnimation: true,
+            particleColor: Constants.white,
+            awayAnimationDuration: const Duration(milliseconds: 600),
+            maxParticleSize: 2,
+            isRandSize: true,
+            isRandomColor: true,
+            randColorList: const [
+              Constants.green,
+              Constants.white,
+              Constants.lightestNavy
+            ],
+            awayAnimationCurve: Curves.easeInOut,
+            enableHover: false,
+            connectDots: false,
+          ),
+          if (CommonFunction.isApp(context))
+            AppHomeBody(
+              pageController: _pageController,
+            )
+          else
+            WebHomeBody(
+              pageController: _pageController,
             ),
-            if (CommonFunction.isApp(context))
-              AppHomeBody(
-                pageController: _pageController,
-              )
-            else
-              WebHomeBody(
-                pageController: _pageController,
-              ),
-          ],
-        ),
+        ],
       ),
     );
   }

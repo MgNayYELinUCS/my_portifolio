@@ -39,7 +39,7 @@ class AboutMeWidget extends StatelessWidget {
                       ),
                     ],
                     Text(
-                      "I'm using Flutter to create mobile apps. \nI presently work as a Senior Flutter Developer for HTUT, and I'm also working on various side projects to improve my mobile skills.",
+                      "I'm using Flutter to create mobile apps. \nI presently work as a Senior Flutter Developer for HTUT, and I'm also working on various side projects to improve my Flutter skills.",
                       style: TextStyle(
                         fontSize: CommonFunction.isApp(context) ? 18 : 16,
                         color: Constants.slate,

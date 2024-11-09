@@ -48,8 +48,15 @@ class Introduction extends StatelessWidget {
           const SizedBox(
             height: 32,
           ),
-          Text(
-            "I am a Flutter Developer from Myanmar that specialises in developing mobile apps. \nI'm fluttering right now!",
+          const Text(
+            '''
+🌍 I’m a Flutter Developer!
+
+I specialize in bringing ideas to life through beautifully crafted mobile apps. With a focus on seamless design and user-friendly functionality, I transform concepts into engaging digital experiences.
+
+🔹 Passionate About Flutter
+Flutter empowers me to deliver smooth, consistent experiences across platforms. From dynamic user interfaces to robust app performance, I use Flutter to create applications that feel at home in users' hands.
+''',
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: 16,

@@ -9,7 +9,8 @@ class ProjectShowcase extends StatefulWidget {
   final String appStoreUrl;
   final String playStoreUrl;
 
-  ProjectShowcase({
+  const ProjectShowcase({
+    super.key,
     required this.title,
     required this.subTitle,
     required this.appStoreUrl,
@@ -99,9 +100,9 @@ class _ProjectShowcaseState extends State<ProjectShowcase> {
                   ),
                 ),
                 SizedBox(
-                  width: widget.playStoreUrl != null ? 16 : 0,
+                  width: widget.playStoreUrl.isEmpty ? 16 : 0,
                 ),
-                widget.playStoreUrl != null
+                widget.playStoreUrl.isEmpty
                     ? InkWell(
                         onTap: () {
                           CommonFunction.openFromUrl(widget.playStoreUrl);
@@ -119,7 +120,7 @@ class _ProjectShowcaseState extends State<ProjectShowcase> {
                         ),
                       )
                     : Container(),
-                widget.appStoreUrl != null
+                widget.appStoreUrl.isEmpty
                     ? Padding(
                         padding: const EdgeInsets.only(left: 16),
                         child: InkWell(
