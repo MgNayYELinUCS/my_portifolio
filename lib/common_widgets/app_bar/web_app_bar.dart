@@ -13,7 +13,7 @@ class WebAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Constants.navy,
+      //color: Constants.navy,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 32),
         child: Row(
@@ -27,7 +27,7 @@ class WebAppBar extends StatelessWidget {
               /// todo generic
               child: Text(
                 'Mr. Nay Ye Lin'.toUpperCase(),
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.w800,
                   fontSize: 32,
                   color: Constants.green,
@@ -37,6 +37,19 @@ class WebAppBar extends StatelessWidget {
             ),
             Row(
               children: [
+                InkWell(
+                  onTap: () {
+                    pageCallback(0);
+                  },
+                  child: _appBarItem(
+                    '0',
+                    'Home',
+                    Icons.home,
+                  ),
+                ),
+                const SizedBox(
+                  width: 32,
+                ),
                 InkWell(
                   onTap: () {
                     pageCallback(1);
